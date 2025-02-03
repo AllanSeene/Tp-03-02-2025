@@ -95,6 +95,20 @@ int tests_run = 0;
 
 
 int main(){
-    
+
+    printf("Entrez des notes en appuyant sur les touches suivantes : 'a' 'z' 'e' 'r' 't' 'y' 'u'\n");
+    float frequencies[12] = { 261.63, 277.18, 293.66, 311.13, 329.63, 349.23, 369.99, 392.00, 415.30, 440.00, 466.16, 493.88 };
+    struct Note ** notes = malloc(12 * sizeof(struct Note *));
+    for (int i = 0; i < 12; i++)
+    {
+        notes[i] = creerNote(frequencies[i], 1);
+    }
+    simulerPiano(notes);
+    for (int i = 0; i < 12; i++)
+    {
+        libereNote(notes[i]);
+    }
+    free(notes);
+    notes = NULL;
     return 0;
 }

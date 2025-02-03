@@ -3,10 +3,12 @@
 
 struct Note
 {
-    int frequence;
+    float frequence;
     int duree;
 };
 
-int creerNote(int frequence, int duree);
+struct Note* creerNote(float frequence, int duree);
 void libereNote(struct Note *note);
+void simulerPiano(struct Note **note);
+
 #endif
